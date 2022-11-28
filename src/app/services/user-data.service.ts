@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../models/User';
 import { Observable, tap, catchError, of } from 'rxjs';
+import { ALL } from '../utils/const';
 
 @Injectable({
   providedIn: 'root'
@@ -9,15 +10,12 @@ import { Observable, tap, catchError, of } from 'rxjs';
 export class UserDataService{
 
   userData: any;
-  constructor(private http: HttpClient) {
-     
-   }
+  constructor(private http: HttpClient) {}
  
 
-  getUserById(id: string) {
-    console.log("User data"+this.userData);
-    
-    return this.userData.filter((user: User) => user.id == id);
+  getUserById(id: any) {
+    const data = JSON.parse(localStorage.getItem(ALL) || '{}') ;    
+    return data.filter((user: User) => user.id == id)[0];
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

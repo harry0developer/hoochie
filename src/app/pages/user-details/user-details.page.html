@@ -1,7 +1,45 @@
+ 
+<div class="top" *ngIf="!isLoading">
+    <ion-avatar>
+        <img alt="profile" [src]="user?.avatar" />
+    </ion-avatar>
 
+    <div class="sub-info">
+        <p class="item"> <b>Verified</b> <img src="assets/verified.png" alt="verified"></p>
+        <p  class="item">{{user?.name}}</p>
+    </div>
 
-<h1>User details</h1>
+    <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Personal Info</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+            <ion-item button>
+                <ion-label>
+                <h3>Gender</h3>
+                <p>{{user?.gender}}</p>
+                </ion-label>
+            </ion-item>
+            
+            <ion-item button>
+                <ion-label>
+                <h3>Age</h3>
+                <p>{{user?.age}}</p>
+                </ion-label>
+            </ion-item>
+            
+            <ion-item button>
+                <ion-label>
+                <h3>Race</h3>
+                <p>{{user?.race}}</p>
+                </ion-label>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+</div>
+ 
 
-<!-- <ion-avatar>
-    <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-</ion-avatar> -->
+<ion-item *ngIf="isLoading">
+    <ion-spinner name="dots"></ion-spinner>
+</ion-item>

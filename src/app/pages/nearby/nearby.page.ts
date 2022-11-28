@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserDataService } from 'src/app/services/user-data.service';
+import { ALL, USER_ID } from 'src/app/utils/const';
 
 @Component({
   selector: 'app-nearby',
@@ -15,6 +16,7 @@ export class NearbyPage {
   ngOnInit() { 
     this.userDataService.getUsersList().subscribe(res => {
       this.data = res;
+      localStorage.setItem(ALL, JSON.stringify(res));
     })
   }
 }
