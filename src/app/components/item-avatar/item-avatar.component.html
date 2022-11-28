@@ -1,0 +1,7 @@
+<div class="item-avatar" (click)="goToUserDetailsPage(user)">
+  <ion-avatar>
+    <img alt="User profile" [src]="user?.avatar"/>
+  </ion-avatar>
+  <div class="title">{{user?.name}}, <b>{{user?.age}}</b></div>
+  <div class="distance">{{user?.distance}} km away</div>
+</div> 

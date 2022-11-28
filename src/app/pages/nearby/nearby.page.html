@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Near by
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Near by</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid>
+    <ion-row >
+      <ion-col *ngFor="let item of data; let i = index">
+        <app-item-avatar [user]="item"></app-item-avatar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+ 
+  </ion-content>
