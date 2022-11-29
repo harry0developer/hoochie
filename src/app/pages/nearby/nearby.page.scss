@@ -1,4 +1,20 @@
+.item-avatar-skeleton {
 
+    padding: 10px;
+    ion-avatar {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+    }
+    .title {
+        font-size: 18px;
+        text-align: center;
+    }
+    .distance {
+        font-size: 16px;
+        text-align: center;
+    } 
+} 
 
 * {
     font-family: 'Dosis', sans-serif;

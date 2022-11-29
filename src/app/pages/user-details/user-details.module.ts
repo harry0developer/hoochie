@@ -7,12 +7,14 @@ import { UserDetailsPage } from './user-details.page';
 import { UserDetailsPageRoutingModule } from './user-details-routing.module';
 import { StorageService } from '../../services/storage.service';
 import { UserDataService } from '../../services/user-data.service';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule, 
+    SwiperModule,
     UserDetailsPageRoutingModule
   ], 
   declarations: [UserDetailsPage],

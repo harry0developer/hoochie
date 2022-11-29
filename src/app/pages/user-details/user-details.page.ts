@@ -1,34 +1,43 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { StorageService } from 'src/app/services/storage.service';
 import { UserDataService } from 'src/app/services/user-data.service';
-import { USER_ID } from 'src/app/utils/const';
-import { Storage } from '@ionic/storage';
-
 @Component({
   selector: 'app-user-details',
   templateUrl: 'user-details.page.html',
-  styleUrls: ['user-details.page.scss']
+  styleUrls: ['user-details.page.scss'],
+  encapsulation: ViewEncapsulation.None,
+
 })
 export class UserDetailsPage {
 
   user: any;
   isLoading: boolean = true;
-  constructor(
+
+  images = [
+    {"id":37,"name":"Virge","email":"vpulford10@g.co","gender":"Genderqueer","race":"Alaskan Athabascan","avatar":"https://robohash.org/veldignissimosvelit.png?size=100x100&set=set1","age":71,"distance":52.0},
+    {"id":38,"name":"Worth","email":"wdaltrey11@guardian.co.uk","gender":"Male","race":"Nicaraguan","avatar":"https://robohash.org/quiquiafuga.png?size=100x100&set=set1","age":45,"distance":54.4},
+    {"id":39,"name":"Skipper","email":"smasedon12@blogger.com","gender":"Male","race":"Yaqui","avatar":"https://robohash.org/explicaboeumqui.png?size=100x100&set=set1","age":99,"distance":28.8},
+    {"id":40,"name":"Vanda","email":"vfawdrie13@dell.com","gender":"Female","race":"Asian Indian","avatar":"https://robohash.org/inquasquidem.png?size=100x100&set=set1","age":9,"distance":23.9},
+    {"id":41,"name":"Bax","email":"bbraizier14@unc.edu","gender":"Male","race":"Fijian","avatar":"https://robohash.org/debitisdoloremad.png?size=100x100&set=set1","age":72,"distance":31.4},
+    {"id":42,"name":"Loraine","email":"lpraten15@jugem.jp","gender":"Female","race":"White","avatar":"https://robohash.org/ipsautassumenda.png?size=100x100&set=set1","age":92,"distance":96.4},
+  ];
+  constructor( 
     private route: ActivatedRoute, 
     private userDataService: UserDataService) {}
-  ngOnInit() {
+
+  ngOnInit() { 
     this.route.paramMap.subscribe(params => {
       console.log(params);
       this.isLoading = false;
-    
       const id = params.get("id") ?  params.get("id") : 9999;
-      console.log("Done...", id);
       this.user = this.userDataService.getUserById(id);
       console.log(this.user);
-      
     }); 
-
-
   }
+
+  actionButton(act: string) {
+    console.log(act);
+    
+  }
+
 }
