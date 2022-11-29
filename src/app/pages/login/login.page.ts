@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
 export class LoginPage {
 
   constructor() {}
-
+  socialLogin(type: string) {
+    console.log(type);
+  }
 }

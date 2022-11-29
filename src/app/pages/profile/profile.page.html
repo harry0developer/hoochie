@@ -14,7 +14,7 @@
   </ion-header>
 
 
-  <div class="top" *ngIf="!isLoading">
+  <div class="top">
     <ion-avatar>
         <img alt="profile" [src]="user?.avatar" />
     </ion-avatar>
@@ -50,11 +50,14 @@
                 <p>{{user?.race}}</p>
                 </ion-label>
             </ion-item>
+            <ion-item button [routerLink]="['/login']">
+              <ion-label>
+              Logout
+              </ion-label>
+          </ion-item>
         </ion-card-content>
       </ion-card>
   </div>
+ 
 
-  <ion-item *ngIf="isLoading">
-      <ion-spinner name="dots"></ion-spinner>
-  </ion-item> 
 </ion-content>
