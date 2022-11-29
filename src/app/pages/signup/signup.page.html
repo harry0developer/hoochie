@@ -6,12 +6,16 @@
     <div class="login-form">
       <ion-card>
         <ion-card-header>
-          <ion-card-title>Sign in</ion-card-title>
+          <ion-card-title>Sign up</ion-card-title>
           <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
         </ion-card-header>
       
         <ion-card-content>
-          <ion-item  lines="none">
+          <ion-item lines="none">
+            <ion-input placeholder="Name/Nickname"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
             <ion-input type="email" placeholder="email@domain.com"></ion-input>
           </ion-item>
 
@@ -19,22 +23,22 @@
             <ion-input type="password" value="password"></ion-input>
           </ion-item>
 
-            <ion-button expand="block">Login</ion-button>
+            <ion-button expand="block">Create account</ion-button>
         </ion-card-content>
         
         <div class="or">Or sign in with</div>
 
         <ion-grid class="social">
           <ion-row>
-            <ion-col (click)="socialLogin('google')"><ion-icon name="logo-google"></ion-icon></ion-col>
-            <ion-col (click)="socialLogin('facebook')"><ion-icon name="logo-facebook"></ion-icon></ion-col>
-            <ion-col (click)="socialLogin('apple')"><ion-icon name="logo-apple"></ion-icon></ion-col>
+            <ion-col (click)="socialSignup('google')"><ion-icon name="logo-google"></ion-icon></ion-col>
+            <ion-col (click)="socialSignup('facebook')"><ion-icon name="logo-facebook"></ion-icon></ion-col>
+            <ion-col (click)="socialSignup('apple')"><ion-icon name="logo-apple"></ion-icon></ion-col>
           </ion-row>
         </ion-grid>
 
-        <div class="or">Or create account</div>
+        <div class="or">Already have an accout?</div>
         <div class="link">
-          <a [routerLink]="['/signup']"><b> Signup</b></a> 
+          <a  [routerLink]="['/login']"><b> Sign in</b></a> 
         </div>
 
       </ion-card>
