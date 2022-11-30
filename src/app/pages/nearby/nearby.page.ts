@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { UserDataService } from 'src/app/services/user-data.service';
-import { ALL } from 'src/app/utils/const';
 
 @Component({
   selector: 'app-nearby',
@@ -15,13 +14,13 @@ export class NearbyPage {
 
 
   ngOnInit() { 
-    this.userDataService.getUsersList().subscribe(res => {
-      this.data = res;
-      localStorage.setItem(ALL, JSON.stringify(res));
-    }, err => {
-      console.log(err);
-    }, () => {
-      this.isLoaded = true
-    })
+    // this.userDataService.getUsersList().subscribe(res => {
+    //   this.data = res;
+    //   localStorage.setItem(ALL, JSON.stringify(res));
+    // }, err => {
+    //   console.log(err);
+    // }, () => {
+    //   this.isLoaded = true
+    // })
   }
 }

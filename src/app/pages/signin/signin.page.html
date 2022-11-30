@@ -19,16 +19,18 @@
             <ion-input type="password" value="password"></ion-input>
           </ion-item>
 
-            <ion-button expand="block">Login</ion-button>
+            <ion-button expand="block" (click)="login('email')">Login</ion-button>
         </ion-card-content>
         
         <div class="or">Or sign in with</div>
 
         <ion-grid class="social">
           <ion-row>
-            <ion-col (click)="socialLogin('google')"><ion-icon name="logo-google"></ion-icon></ion-col>
-            <ion-col (click)="socialLogin('facebook')"><ion-icon name="logo-facebook"></ion-icon></ion-col>
-            <ion-col (click)="socialLogin('apple')"><ion-icon name="logo-apple"></ion-icon></ion-col>
+            <ion-col (click)="login('google')"><ion-icon name="logo-google"></ion-icon></ion-col>
+            <ion-col (click)="login('phone')"><ion-icon name="call-outline"></ion-icon></ion-col>
+
+            <!-- <ion-col (click)="login('facebook')"><ion-icon name="logo-facebook"></ion-icon></ion-col>
+            <ion-col (click)="login('apple')"><ion-icon name="logo-apple"></ion-icon></ion-col> -->
           </ion-row>
         </ion-grid>
 

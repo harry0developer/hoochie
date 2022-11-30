@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from '../models/User';
+import { User } from '../models/oldUser';
 import { Observable, tap, catchError, of } from 'rxjs';
-import { ALL } from '../utils/const';
+// import { ALL } from '../utils/const';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class UserDataService{
  
 
   getUserById(id: any) {
-    const data = JSON.parse(localStorage.getItem(ALL) || '{}') ;    
+    const data = JSON.parse(localStorage.getItem('ALL') || '{}') ;    
     return data.filter((user: User) => user.id == id)[0];
   }
 
